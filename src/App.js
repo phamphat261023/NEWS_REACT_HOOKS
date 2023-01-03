@@ -1,13 +1,13 @@
 import logo from "./logo.svg";
 import "./App.scss";
-import AddNew from "./views/AddNew";
+import NewsManage from "./views/NewsManage";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <AddNew />
+        <NewsManage />
       </header>
     </div>
   );

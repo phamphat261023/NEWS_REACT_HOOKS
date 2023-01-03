@@ -48,6 +48,12 @@
     }
 }
 
+.form-post {
+    margin-bottom: 50px;
+}
+
+//Modals Add News
+
 .modal.fade.show {
     width: 600px;
     height: 500px;
@@ -137,4 +143,66 @@
         cursor: pointer;
     }
 
+}
+
+.form-update {
+
+    .close {
+        position: absolute;
+        margin-left: 580px;
+        color: #fff;
+        font-size: 20px;
+    }
+
+    .form-update-header {
+        color: #fff;
+        padding: 1px;
+        background: #999;
+
+        p.form-title {
+            font-size: 25px;
+            font-weight: 600;
+            text-align: center;
+        }
+    }
+
+    .form-update-body {
+
+        .input-title,
+        .input-content,
+        .input-short,
+        .input-category {
+            margin-top: 20px;
+            font-size: 15px;
+        }
+
+        .title,
+        .content,
+        .shortDescription,
+        .category {
+            border-radius: 5px;
+        }
+    }
+
+    .form-update-footer {
+        .btn {
+            margin-top: 70px;
+            display: flex;
+            gap: 20px;
+            justify-content: end;
+            margin-right: 40px;
+        }
+
+        button.btn-save,
+        button.btn-closes {
+            height: 40px;
+            width: 100px;
+            font-size: 15px;
+            font-weight: 400;
+            color: #fff;
+            background: #999;
+            border: none;
+            cursor: pointer;
+        }
+    }
 }
