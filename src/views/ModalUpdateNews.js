@@ -22,6 +22,7 @@ const ModalUpdateNews = (props) => {
       setShortDescription(news.shortDescription);
       setCategoryCode(news.categoryCode);
     }
+    console.log("Check data from parent", props.currentNews);
   });
 
   const handleSaveChangesNews = () => {

@@ -10,7 +10,6 @@ const NewsManage = () => {
   const [shortDescription, setShortDescription] = useState("");
   const [title, setTitle] = useState("");
   const [categoryCode, setCategoryCode] = useState("");
-  const [isOpenModalAddNew, setIsOpenModalAddNew] = useState(false);
   const [isOpenModalUpdate, setIsOpenModalUpdate] = useState(false);
   const initState = {
     id,
@@ -60,35 +59,28 @@ const NewsManage = () => {
     getAllNewsFromReact();
   };
 
-  const handleUpdateNews = async (id, data) => {
-    await axios.put(`http://localhost:8081/news/${id}`, data).then((res) => {
-      console.log(res.data);
-      getAllNewsFromReact();
-    });
+  const handleUpdateNews = async (id) => {
+    await axios
+      .put(`http://localhost:8081/news/${id}`, newsUpdate)
+      .then((res) => {
+        console.log(res.data);
+        getAllNewsFromReact();
+      });
   };
-
-  // const handleToggleModal = () => {
-  //   setIsOpenModalAddNew(!isOpenModalAddNew);
-  // };
 
   const handleToggleUpdate = () => {
     setIsOpenModalUpdate(!isOpenModalUpdate);
   };
 
-  const handleUpdateModals = (news) => {
+  const handleUpdateModals = (data) => {
     setIsOpenModalUpdate(true);
-    setNewsUpdate(news);
-    console.log("Check data:", news);
+    setNewsUpdate(data);
+    console.log("Check data:", data);
   };
 
   return (
     <>
       <div className="user-container">
-        {/* <ModalAddNews
-          toggleModals={handleToggleModal}
-          isOpenModals={isOpenModalAddNew}
-          createNews={handleCreateNews}
-        /> */}
         <ModalUpdateNews
           toggleModalsUpdate={handleToggleUpdate}
           isOpenModalsUpdate={isOpenModalUpdate}
